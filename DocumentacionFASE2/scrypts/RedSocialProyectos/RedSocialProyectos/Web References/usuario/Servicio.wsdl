@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://Service/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="Servicio" targetNamespace="http://Service/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/Prosocial/Servicio?xsd=1" namespace="http://Service/" />
+    </xsd:schema>
+  </types>
+  <message name="Buscarid">
+    <part name="parameters" element="tns:Buscarid" />
+  </message>
+  <message name="BuscaridResponse">
+    <part name="parameters" element="tns:BuscaridResponse" />
+  </message>
+  <message name="Publicar">
+    <part name="parameters" element="tns:Publicar" />
+  </message>
+  <message name="PublicarResponse">
+    <part name="parameters" element="tns:PublicarResponse" />
+  </message>
+  <message name="Login">
+    <part name="parameters" element="tns:Login" />
+  </message>
+  <message name="LoginResponse">
+    <part name="parameters" element="tns:LoginResponse" />
+  </message>
+  <message name="Agregarusuario">
+    <part name="parameters" element="tns:Agregarusuario" />
+  </message>
+  <message name="AgregarusuarioResponse">
+    <part name="parameters" element="tns:AgregarusuarioResponse" />
+  </message>
+  <portType name="Servicio">
+    <operation name="Buscarid">
+      <input wsam:Action="http://Service/Servicio/BuscaridRequest" message="tns:Buscarid" />
+      <output wsam:Action="http://Service/Servicio/BuscaridResponse" message="tns:BuscaridResponse" />
+    </operation>
+    <operation name="Publicar">
+      <input wsam:Action="http://Service/Servicio/PublicarRequest" message="tns:Publicar" />
+      <output wsam:Action="http://Service/Servicio/PublicarResponse" message="tns:PublicarResponse" />
+    </operation>
+    <operation name="Login">
+      <input wsam:Action="http://Service/Servicio/LoginRequest" message="tns:Login" />
+      <output wsam:Action="http://Service/Servicio/LoginResponse" message="tns:LoginResponse" />
+    </operation>
+    <operation name="Agregarusuario">
+      <input wsam:Action="http://Service/Servicio/AgregarusuarioRequest" message="tns:Agregarusuario" />
+      <output wsam:Action="http://Service/Servicio/AgregarusuarioResponse" message="tns:AgregarusuarioResponse" />
+    </operation>
+  </portType>
+  <binding name="ServicioPortBinding" type="tns:Servicio">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Buscarid">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Publicar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Login">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Agregarusuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="Servicio">
+    <port name="ServicioPort" binding="tns:ServicioPortBinding">
+      <soap:address location="http://localhost:8080/Prosocial/Servicio" />
+    </port>
+  </service>
+</definitions>
